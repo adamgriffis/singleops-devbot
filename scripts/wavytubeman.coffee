@@ -30,7 +30,7 @@ module.exports = (robot) ->
           console.error(error);
           console.log(result);
       )
-    , 15000)
+    , 20000)
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
