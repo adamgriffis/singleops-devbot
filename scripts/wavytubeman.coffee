@@ -11,8 +11,6 @@ send = require('gmail-send')({
 module.exports = (robot) ->
 
   robot.hear /:wavytubeman/i, (res) ->
-    res.send "TUBE MAN!?!?!?"
-
     send({
       subject: '#turnon'
       text:  '#turnon',  
@@ -32,7 +30,7 @@ module.exports = (robot) ->
           console.error(error);
           console.log(result);
       )
-    , 30000)
+    , 15000)
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
