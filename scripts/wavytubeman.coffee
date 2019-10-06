@@ -33,9 +33,11 @@ tubeManOnOff = () ->
 module.exports = (robot) ->
 
   robot.hear /:wavytubeman:/i, (res) ->
+    robot.send "I see a wavy tube man"
     tubeManOnOff()
 
   robot.hear /:armflailingtubeman:/i, (res) ->
+    robot.send "I see a flaiing tube man"
     tubeManOnOff()
 
   robot.hearReaction (res) ->
