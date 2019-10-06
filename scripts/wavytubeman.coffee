@@ -39,8 +39,6 @@ module.exports = (robot) ->
     tubeManOnOff()
 
   robot.hearReaction (res) ->
-    robot.send "I see a reaction: #{res.message.reaction}"
-
     # res.message is a ReactionMessage instance that represents the reaction Hubot just heard
     if res.message.type == "added" and res.message.item.type == "message" and (res.message.reaction == 'armflailingtubeman' or res.message.reaction == 'wavytubeman')
 
