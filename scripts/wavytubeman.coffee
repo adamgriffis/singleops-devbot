@@ -33,13 +33,15 @@ tubeManOnOff = () ->
 module.exports = (robot) ->
 
   robot.hear /:wavytubeman:/i, (res) ->
-    res.send "I see a wavy tube man"
     tubeManOnOff()
 
   robot.hear /:armflailingtubeman:/i, (res) ->
-    res.send "I see a flaiing tube man"
     tubeManOnOff()
 
   robot.hearReaction (res) ->
-    res.send "I see a reaction: #{res.message.reaction}"
+    robot.send "I see a reaction: #{res.message.reaction}"
 
+    # res.message is a ReactionMessage instance that represents the reaction Hubot just heard
+    if res.message.type == "added" and res.message.item.type == "message" and (res.message.reaction == 'armflailingtubeman' or res.message.reaction == 'wavytubeman')
+
+      tubeManOnOff()
