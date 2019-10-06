@@ -38,7 +38,7 @@ module.exports = (robot) ->
   robot.hear /:armflailingtubeman:/i, (res) ->
     tubeManOnOff()
 
-  robot.react (res) ->
+  robot.hearReaction (res) ->
     robot.send "I see a reaction: #{res.message.reaction}"
 
     # res.message is a ReactionMessage instance that represents the reaction Hubot just heard
